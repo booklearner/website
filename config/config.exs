@@ -15,7 +15,7 @@ config :website, WebsiteWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [view: WebsiteWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Website.PubSub,
-  live_view: [signing_salt: "oD2FTuqo"]
+  live_view: [signing_salt: "HwVDk1rk"]
 
 # Configures the mailer
 #

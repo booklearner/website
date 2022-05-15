@@ -2,13 +2,10 @@ import Config
 
 # Configure your database
 config :website, Website.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "website_dev",
+  database: Path.expand("../website_dev.db", Path.dirname(__ENV__.file)),
+  pool_size: 5,
   stacktrace: true,
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  show_sensitive_data_on_connection_error: true
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -23,7 +20,7 @@ config :website, WebsiteWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "AHZmFj9DfjcAvN9PJzNeargQ/lmTLvDuV9YeSSPojh6dWrSkymc3VNuh74rAoUbp",
+  secret_key_base: "XER+/uCKSw/tYUs7FjJ2qH1/FdFERo5Eeo+N7qe8pZz4Sl23coI5KlM4zncRjcBp",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
